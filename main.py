@@ -9,8 +9,8 @@ import os
 
 
 SheetName = 'RM'
-ExcelPath = r'E:/'
-FinalPath = r'E:/' + SheetName + '/'
+ExcelPath = r'./'
+FinalPath = r'./' + SheetName + '/'
 load_wb = load_workbook(ExcelPath+'2020_손정빈_세금계산서_12월.xlsx',data_only=True)
 load_ws = load_wb[SheetName]
 
