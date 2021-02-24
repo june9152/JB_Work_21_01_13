@@ -7,14 +7,18 @@ import os
 
 
 
-SheetName = input("시트명을 입력하세요.")
-ExcelPath = r'C:/Users/82104/Desktop/Python'
-FinalPath = r'C:/Users/82104/Desktop/Python' + SheetName + '/'
-load_wb = load_workbook(ExcelPath+'정빈.xlsx',data_only=True)
-load_ws = load_wb[SheetName]
+ExcelPath = r'C:\Users\손정빈\Desktop\2021_손정빈\2021_손정빈_비용\2021_손정빈_비용_리스트'
+
+
+
+load_wb = load_workbook(ExcelPath+ r'\2021_손정빈_세금계산서_1월.xlsx',data_only=True)
+sheets = load_wb.get_sheet_names() # 엑셀 파일의 워크시트 이름들 불러오기
+#print(sheets)
+
+
 
 def Data_Convert(str):
-    str=str.replace('2020',"20")
+    str=str.replace('2021',"21")
     str=str.replace('-',"")
     str=str.replace(' 00:00:00',"")
     return str
@@ -101,8 +105,15 @@ def JB_FolderCreate():
 
 # Excel_RowLengthFunc(load_ws)
 
+print(sheets[0])
+for i in sheets:
+    SheetName = i
+#SheetName = input("시트명을 입력하세요.")
 
-JB_FolderCreate()
+    load_ws = load_wb[SheetName]
+    FinalPath = r'C:\Users\손정빈\Desktop\2021_손정빈\2021_손정빈_과제_test3' + '\\'+SheetName+ '\\' + SheetName + "_1월" + '/'
+
+    JB_FolderCreate()
 
 
 

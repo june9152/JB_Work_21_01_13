@@ -43,7 +43,9 @@ time.sleep(1);
 driver.get('https://blog.naver.com/93_11_23')
 driver.find_element_by_xpath('//*[@id="post-admin"]/a[1]').click()
 
+# <a href="https://blog.naver.com/93_11_23/postwrite" target="mainFrame" class="col _checkBlock _rosRestrict" onclick="clickcr(this,'prf.write','','',event);">글쓰기</a>
 
+#
 
 
 
